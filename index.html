@@ -1,11 +1,9 @@
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> XXXXXXX </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title> XXXXX </title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <style>
         body {
@@ -13,23 +11,23 @@
             text-align: center;
             background-color: #ffffff;
             padding: 20px;
+            margin: 0;
         }
         .video-title {
             font-size: 1em;
             font-weight: bold;
             margin-bottom: 18px;
             letter-spacing: 1px;
-            color: black;
+            color: #000;
         }
         .video-wrapper {
             position: relative;
             width: 100%;
             max-width: 720px;
-            margin: 0 auto;
+            margin: 0 auto 24px;
         }
         video {
             width: 100%;
-            max-width: 100%;
             border-radius: 10px;
             display: block;
         }
@@ -49,47 +47,81 @@
             z-index: 2;
             overflow: hidden;
         }
-        @media (max-width: 400px) {
+        @media (max-width: 480px) {
             .ad-banner-inside {
                 width: 95vw;
                 height: 40px;
                 font-size: 0.85em;
             }
         }
+
+        /* container to center ad scripts */
+        .ad-center {
+            display: flex;
+            justify-content: center;
+            margin: 12px 0;
+        }
     </style>
 </head>
 <body>
-    <div class="video-title"> XXXXXXX <span aria-label="smile" role="img"></span></div>
-  <center>
-      <script type="text/javascript">
-	atOptions = {
-		'key' : 'a34ca843b0b926820430fc7feef2d5d5',
-		'format' : 'iframe',
-		'height' : 60,
-		'width' : 468,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//buffetaccommodating.com/a34ca843b0b926820430fc7feef2d5d5/invoke.js"></script>
-</center>
+    <div class="video-title"> XXXXX </div>
+
+    <!-- AD SLOT 1 (provider: buffetaccommodating) -->
+    <div class="ad-center">
+        <!-- provider expects a global atOptions before loading invoke.js -->
+        <script>
+            (function(window){
+                window.atOptions = {
+                    key: 'a34ca843b0b926820430fc7feef2d5d5',
+                    format: 'iframe',
+                    height: 60,
+                    width: 468,
+                    params: {}
+                };
+            })(window);
+        </script>
+        <script async src="//buffetaccommodating.com/a34ca843b0b926820430fc7feef2d5d5/invoke.js"></script>
+    </div>
+
     <div class="video-wrapper">
-        <video autoplay loop playsinline controls poster="https://cdn.aceimg.com/9e257a1d1.png">
-            <source src="https://cdn.videy.co/kDHUJxg21.mp4" type="video/mp4">
+        <div class="ad-banner-inside" aria-hidden="true" id="native-ad-placeholder" style="display:none;">
+        </div>
+
+        <video autoplay loop playsinline controls poster="https://cdn.aceimg.com/4b1f6bee5.jpg">
+            <source src="https://cdn.videy.co/IBtvt4zO1.mp4" type="video/mp4">
+            Browser Anda tidak mendukung tag video.
         </video>
-</div>
-<script async="async" data-cfasync="false" src="//buffetaccommodating.com/31ef0948d9c167545382ae2aeb6744f3/invoke.js"></script>
-<div id="container-31ef0948d9c167545382ae2aeb6744f3"></div>
+    </div>
+
+    <!-- AD SLOT 2 (different container id from original) -->
+    <div class="ad-center">
+        <script>
+            (function(window){
+                // If this provider requires specific globals, expose them here.
+                // (Left empty intentionally if provider script doesn't use globals.)
+            })(window);
+        </script>
+        <script async data-cfasync="false" src="//buffetaccommodating.com/31ef0948d9c167545382ae2aeb6744f3/invoke.js"></script>
+    </div>
+    <div id="container-31ef0948d9c167545382ae2aeb6744f3"></div>
+
+    <!-- Histats tracking (migrated to https) -->
+    <script>
+        var _Hasync = _Hasync || [];
+        _Hasync.push(['Histats.start', '1,4992245,4,511,95,18,00000000']);
+        _Hasync.push(['Histats.fasi', '1']);
+        _Hasync.push(['Histats.track_hits', '']);
+        (function() {
+            var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+            hs.src = 'https://s10.histats.com/js15_as.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+        })();
+    </script>
+    <noscript>
+        <a href="https://www.histats.com" target="_blank" rel="noopener">
+            <img src="https://sstatic1.histats.com/0.gif?4992245&101" alt="histats" border="0">
+        </a>
+    </noscript>
+
 </body>
 </html>
-<!-- Histats.com  START  (aync)-->
-<script type="text/javascript">var _Hasync= _Hasync|| [];
-_Hasync.push(['Histats.start', '1,4992245,4,511,95,18,00000000']);
-_Hasync.push(['Histats.fasi', '1']);
-_Hasync.push(['Histats.track_hits', '']);
-(function() {
-var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-hs.src = ('//s10.histats.com/js15_as.js');
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-})();</script>
-<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4992245&101" alt="" border="0"></a></noscript>
-<!-- Histats.com  END  -->
